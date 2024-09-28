@@ -1,0 +1,37 @@
+.calendar-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 175px);
+    justify-content: center;
+    gap: 1rem;
+}
+
+.weekday {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 175px);
+    grid-auto-rows: 125px;
+    justify-content: center;
+    gap: 1rem 1rem;
+}
+
+.notDayInMonth {
+    background-color: lightgray;
+}
+
+.day {
+    border: solid 1px black;
+}
+
+.currentDay {
+    background-color: aqua;
+}

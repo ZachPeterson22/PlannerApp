@@ -1,13 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+import AddNewEvent from './AddNewEvent.js';
+import Calendar from './Calendar.js';
+
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    {/* <AddNewEvent /> */}
+    <Calendar />
   </React.StrictMode>
 );
 
