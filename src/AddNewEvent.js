@@ -11,10 +11,7 @@ function AddNewEvent() {
     const data = new FormData(e.target);
     const payload = Object.fromEntries(data);
 
-    console.log(payload);
-
     setDays([...days, payload])
-    console.log(days);
   }
 
   return (
