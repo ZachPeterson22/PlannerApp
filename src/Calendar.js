@@ -2,6 +2,7 @@ import { eachDayOfInterval, endOfMonth, format, previousDay, startOfMonth, getDa
 import './Calendar.css';
 import clsx from 'clsx';
 
+
 function Calendar() {
     const WEEKDAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
     const currentDate = new Date();
@@ -45,6 +46,7 @@ function Calendar() {
                     })}>{format(day, 'd')}</div>
                 })}
             </div>
+            
         </>
     )
 };

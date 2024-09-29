@@ -1,9 +1,11 @@
 // import './App.css';
 import { useState } from 'react';
+import { useContext } from 'react';
+import { EventContext } from './EventContext';
 
 function AddNewEvent() {
   const DATE_STRING = 'dateString';
-   const [days, setDays] = useState([]);
+   const [events, setEvents] = useContext(EventContext);
 
   const getTheDay = (e) => {
     e.preventDefault();
@@ -11,7 +13,7 @@ function AddNewEvent() {
     const data = new FormData(e.target);
     const payload = Object.fromEntries(data);
 
-    setDays([...days, payload])
+    setEvents([...events, payload.dateString]);
   }
 
   return (
@@ -23,9 +25,9 @@ function AddNewEvent() {
       </form>
       <div>
         <ul>
-          {days.map((day, index) => 
-            <li key={index}>{day.dateString}</li>
-          )}
+          {events.map((theEvent, index) => {
+              return <li key={index}>{theEvent}</li>
+          })}
         </ul>
       </div>
     </div>
