@@ -1,7 +1,16 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { getNotes } from "./API";
 
 function Notes() {
     const [notes, setNotes] = useState([]);
+
+    useEffect(() => {
+        const fetchItems = async () => {
+            const data = await getNotes();
+            setNotes(data);
+          };
+          fetchItems();
+    }, []);
 
     const newNote = (e) => {
         e.preventDefault();
@@ -10,6 +19,7 @@ function Notes() {
         const payload = Object.fromEntries(note);
     
         setNotes([...notes, payload]);
+        console.log("NOTES", notes);
       }
 
     return (
@@ -21,7 +31,7 @@ function Notes() {
             <div>
                 <ul>
                 {notes.map((note, index) => 
-                    <li key={index}>{note.notepad}</li>
+                    <li key={index}>{note.notes}</li>
                 )}
                 </ul>
             </div>

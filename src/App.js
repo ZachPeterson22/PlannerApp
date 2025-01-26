@@ -8,6 +8,7 @@ import Notes from './Notes.js';
 import './index.css';
 import { EventContext } from './EventContext.js';
 
+
 export default function App() {
   const [events, setEvents] = useState(['2024-09-05', '2024-09-06', '2024-09-07']);
   
